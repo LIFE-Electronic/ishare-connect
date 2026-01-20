@@ -963,38 +963,38 @@ pub enum DecodeTokenError {
     IatAfterNow,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Adherence {
     pub status: String,
     pub end_date: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Certificate {
     x5c: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 
 pub struct Spor {
     signed_request: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "snake_case")]
 pub enum CertificatesOrSpor {
     Certificates(Vec<Certificate>),
     Spor(Spor),
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Agreement {
     dataspace_id: String,
     #[serde(rename = "type")]
     r#type: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct PartyInfo {
     pub adherence: Adherence,
     pub party_id: String,
