@@ -1,3 +1,7 @@
+pub mod delegation_evidence;
+pub mod delegation_request;
+pub mod pdp;
+
 use anyhow::Context;
 use jsonwebtoken::{decode, Algorithm, DecodingKey, TokenData, Validation};
 use reqwest_middleware::ClientBuilder;

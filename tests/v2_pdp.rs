@@ -1,7 +1,7 @@
 mod common;
 
 use common::TestPki;
-use ishare::pdp::PDP;
+use ishare::v2::pdp::PDP;
 use serde_json::json;
 use wiremock::{
     matchers::{body_string_contains, header, method, path},

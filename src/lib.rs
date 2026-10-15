@@ -1,7 +1,4 @@
 pub mod common;
-pub mod delegation_evidence;
-pub mod delegation_request;
-pub mod pdp;
 pub mod v2;
 pub mod v3;
 

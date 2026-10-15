@@ -1,4 +1,4 @@
-use crate::delegation_evidence::{
+use super::delegation_evidence::{
     build_filter_delegation_request, verify_delegation_evidence, DelegationEvidence,
     DelegationTarget, Environment, Policy, Resource, ResourceRules, ResourceTarget,
 };
