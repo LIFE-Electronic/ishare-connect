@@ -1,0 +1,52 @@
+{
+  "iss": "did:ishare:EU.NL.NTRLNL-10000000",
+  "sub": "did:ishare:EU.NL.NTRLNL-10000000",
+  "jti": "9774d924b8c04b97bd3f0807deb154b6",
+  "iat": 1591966010,
+  "exp": 1591966040,
+  "aud": "did:ishare:EU.NL.NTRLNL-10000001",
+  "trustedList": [
+    {
+      "subject": "C=NL, O=Staat der Nederlanden, CN=TEST Staat der Nederlanden Organisatie Services CA - G3",
+      "certificateFingerprint": "DC13FC94FF0149DE1B07F7965F655AED54C6A6BDA7ADF71A732FFCFABC454C7A",
+      "validity": "valid",
+      "status": "granted"
+    },
+    {
+      "subject": "C=NL, O=iSHARE Foundation, CN=TEST iSHARE Foundation PKIoverheid Organisatie Server CA - G3",
+      "certificateFingerprint": "F218133CD3AC2D970D10CA46BB03F832453324B0F4AF5C3F61BAD6FDEEC5EB83",
+      "validity": "valid",
+      "status": "granted"
+    },
+    {
+      "subject": "C=NL, O=TEST Staat der Nederlanden, CN=TEST Staat der Nederlanden Root CA - G3",
+      "certificateFingerprint": "98C9C14F7F1F9A83A744E0ACBA9DA6A47EE96E053D72795457A5BC0207229D43",
+      "validity": "valid",
+      "status": "granted"
+    },
+    {
+      "subject": "CN=TEST iSHARE Foundation eIDAS",
+      "certificateFingerprint": "8C39DD06E35DE8467004A542D0CA4B8FDC7D6F8F713F40A35BD9E65938A191CF",
+      "validity": "valid",
+      "status": "granted"
+    },
+    {
+      "subject": "C=NL, O=iSHARE, OU=Test, CN=iSHARETestCA",
+      "certificateFingerprint": "A78FDF7BA13BBD95C6236972DD003FAE07F4E447B791B6EF6737AD22F0B61862",
+      "validity": "valid",
+      "status": "granted"
+    },
+    {
+      "subject": "CN=TEST iSHARE EU Issuing Certification Authority G5",
+      "certificateFingerprint": "FD5593DC874ECC1133C21A77259C3592552EC0C89DFCD7AB3C0BDCFD73F0F5CC",
+      "validity": "valid",
+      "status": "granted"
+    },
+    {
+      "subject": "C=NL, O=iSHARE, OU=Test, CN=iSHARETestCA_TLS",
+      "certificateFingerprint": "DF2FF51D1B2559D686723C97037DC9D5C589406CAC4F84C29AB3D43E0126251D",
+      "validity": "valid",
+      "status": "granted"
+    }
+  ]
+}

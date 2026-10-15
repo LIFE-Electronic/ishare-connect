@@ -1,7 +1,8 @@
 use clap::Parser;
-use ishare::ishare::ISHARE;
+use ishare::Identity;
 
 #[derive(Parser, Debug)]
+#[allow(dead_code)]
 #[command(version, about, long_about = None)]
 struct Args {
     #[arg(short, long)]
@@ -30,17 +31,8 @@ struct Args {
 async fn main() {
     let args = Args::parse();
 
-    let ishare = ISHARE::new(
-        args.cert_file,
-        args.password,
-        args.sattelite_url,
-        args.perm_ishare,
-        args.id_client.clone(),
-        args.eori_sattelite,
-        None,
-    )
-    .unwrap();
-    let token = ishare.create_client_assertion(args.target_id).unwrap();
+    let identity = Identity::from_p12(&args.cert_file, &args.password, &args.id_client).unwrap();
+    let token = identity.create_client_assertion(args.target_id).unwrap();
 
     println!("{}", token);
 }

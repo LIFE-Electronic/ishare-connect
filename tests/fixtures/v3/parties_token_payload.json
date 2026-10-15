@@ -1,0 +1,95 @@
+{
+  "aud": "did:ishare:EU.NL.NTRLNL-10000001",
+  "iss": "did:ishare:EU.NL.NTRLNL-10000000",
+  "sub": "did:ishare:EU.NL.NTRLNL-10000000",
+  "exp": 1591965935,
+  "iat": 1591965905,
+  "jti": "0868904d8ed94c01a0a4d6dd5c65ce9e",
+  "partiesInfo": {
+    "currentPage": 1,
+    "pageSize": 10,
+    "totalPages": 5,
+    "totalCount": 47,
+    "count": 10,
+    "data": [
+      {
+        "id": "did:ishare:EU.NL.NTRNL-12345678",
+        "name": "Example Corporation",
+        "alsoKnownAs": [
+          "did:ishare:EU.NL.NTRNL-12345678", 
+          "did:elsi:LEIXG-724500AZSGBRY55MNS59", 
+          "did:web:example.com", 
+          "CoC:123456789"
+        ],
+        "claims": [
+          {
+            "id": "5ffb4bb9-2020-4045-a922-3bd84e78f709",
+            "status": "active",
+            "registrarId": " did:ishare:EU.NL.NTRNL-10000000",
+            "startDate": "2025-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "type": "frameworkCompliance",
+            "frameworkId": "iSHARE",
+            "additionalInfo": {
+              "description": "Example description",
+              "publiclyPublishable": true,
+              "website": "https://www.example.com"
+            }
+          },
+          {
+            "id": "9ed368f3-63cb-460a-8b9e-e959a346cc40",
+            "status": "active",
+            "registrarId": " did:ishare:EU.NL.NTRNL-10000000",
+            "startDate": "2025-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "type": "frameworkRole",
+            "roleId": "ServiceConsumer",
+            "title": "Service Consumer",
+            "loa": "not-applicable",
+            "compliancyVerified": "yes",
+            "legalAdherence": "yes",
+            "frameworkId": "iSHARE"
+          },
+          {
+            "id": "2065b29b-ecb8-438f-a12e-4f23409d4e56",
+            "status": "active",
+            "registrarId": " did:ishare:EU.NL.NTRNL-10000000",
+            "startDate": "2025-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "type": "frameworkAgreement",
+            "agreementType": "AccessionAgreement",
+            "agreementId": "fd06e213-7db2-469b-b9ce-de00e48e1817",
+            "title": "Accession Agreement",
+            "verificationHash": "aef5bb5e3ab49150a53b89628ab8593315b6686f3f96497277feb9d658527acb",
+            "frameworkId": "iSHARE"
+          },
+          {
+            "id": "2065b29b-ecb8-438f-a12e-4f23409d4e56",
+            "status": "active",
+            "registrarId": " did:ishare:EU.NL.NTRNL-10000000",
+            "startDate": "2025-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "type": "frameworkAgreement",
+            "agreementType": "TermsOfUse",
+            "agreementId": "3cde6ff3-243d-48c0-8003-31d3fea3c1f1",
+            "title": "Terms of Use",
+            "verificationHash": "f727a459b5ca5a32e5aff71c03fdaa697cd46a45eb04eecaaae5931eb9a5c00e",
+            "frameworkId": "iSHARE"
+          },
+          {
+            "id": "808d97ac-2bb2-4fe4-85b6-b2c319037541",
+            "status": "active",
+            "registrarId": " did:ishare:EU.NL.NTRNL-10000000",
+            "startDate": "2025-01-01T00:00:00.000Z",
+            "endDate": "2026-12-31T00:00:00.000Z",
+            "type": "x509Certificate",
+            "subjectName": "C=NL,O=Test Service Consumer,CN=Test Service Consumer,2.5.4.97=NTRNL-10000001",
+            "certificateType": "eSeal",
+            "x5c": "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",
+            "x5t#s256": "4670551451113b19425f8d63c3d6ce444b58de60831101748e9fb97b3e8766f8"
+          }
+        ]
+      }
+    ]
+  }
+}

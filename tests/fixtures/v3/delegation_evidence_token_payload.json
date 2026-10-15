@@ -1,0 +1,65 @@
+{
+  "iss": "did:ishare:EU.NL.NTRNL-10000004",
+  "sub": "did:ishare:EU.NL.NTRNL-10000004",
+  "jti": "7fa1ec39bac34fffa2ca48201e48f03a",
+  "iat": 1711466985,
+  "exp": 1711467015,
+  "aud": "did:ishare:EU.NL.NTRNL-10000001",
+  "delegationEvidence": {
+    "notBefore": 1541058939,
+    "notOnOrAfter": 2147483647,
+    "policyIssuer": "did:ishare:EU.NL.NTRNL-10000005",
+    "target": {
+      "accessSubject": "did:ishare:EU.NL.NTRNL-10000001"
+    },
+    "policySets": [
+      {
+        "maxDelegationDepth": 0,
+        "target": {
+          "environment": {
+            "licenses": [
+              "https://licenses.ishare.eu/general-unrestricted/1.0"
+            ]
+          }
+        },
+        "policies": [
+          {
+            "target": {
+              "resource": {
+                "type": "GS1.CONTAINER",
+                "identifiers": [
+                  "180621.ABC1234"
+                ],
+                "attributes": [
+                  "GS1.CONTAINER.ATTRIBUTE.ETA"
+                ]
+              },
+              "actions": [
+                "ISHARE.READ"
+              ]
+            },
+            "rules": [
+              {
+                "effect": "Permit",
+                "conditions": {
+                  "anyOf": [
+                    {
+                      "leftOperand": "serviceProvider",
+                      "operator": "equal",
+                      "rightOperand": "did:ishare:EU.NL.NTRNL-10000003"
+                    },
+                    {
+                      "leftOperand": "serviceProvider",
+                      "operator": "equal",
+                      "rightOperand": "did:ishare:EU.NL.NTRNL-10000002"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
