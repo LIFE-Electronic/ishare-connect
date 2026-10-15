@@ -2,10 +2,9 @@ use crate::delegation_evidence::{
     build_filter_delegation_request, verify_delegation_evidence, DelegationEvidence,
     DelegationTarget, Environment, Policy, Resource, ResourceRules, ResourceTarget,
 };
-use crate::ishare;
 
 use super::delegation_request::{build_simple_delegation_request, DelegationRequestContainer};
-use super::ishare::{IshareClaimsWithExtra, IshareError, ISHARE};
+use crate::common::{DecodeTokenError, Identity, IshareClaimsWithExtra, IshareError};
 use base64::prelude::*;
 
 use chrono::Utc;
@@ -29,7 +28,7 @@ pub struct DelegationTokenResponse {
 }
 
 pub struct PDP<'a> {
-    ishare: &'a ISHARE,
+    identity: &'a Identity,
     eori: String,
     url: String,
 }
@@ -56,8 +55,12 @@ pub struct PolicySetInsertResponse {
 }
 
 impl<'a> PDP<'a> {
-    pub fn new(ishare: &'a ISHARE, eori: String, url: String) -> PDP<'a> {
-        return Self { ishare, eori, url };
+    pub fn new(identity: &'a Identity, eori: String, url: String) -> PDP<'a> {
+        return Self {
+            identity,
+            eori,
+            url,
+        };
     }
 
     pub async fn authorize(
@@ -92,9 +95,9 @@ impl<'a> PDP<'a> {
         &self,
         delegation_token: &str,
         resource_type: &str,
-    ) -> Result<bool, ishare::DecodeTokenError> {
+    ) -> Result<bool, DecodeTokenError> {
         let decoded: TokenData<IshareClaimsWithExtra<DelegationTokenClaims>> =
-            self.ishare
+            self.identity
                 .decode_token_custom_claims::<DelegationTokenClaims>(delegation_token, None)?;
 
         let de = decoded.claims.extra.delegation_evidence;
@@ -326,7 +329,7 @@ impl<'a> PDP<'a> {
         identifiers: Option<Vec<String>>,
         attributes: Option<Vec<String>>,
     ) -> DelegationRequestContainer {
-        let service_provider = self.ishare.get_client_eori();
+        let service_provider = self.identity.eori().to_owned();
         let actions = vec![action.to_string()];
 
         let delegation_request = build_simple_delegation_request(
@@ -362,7 +365,6 @@ impl<'a> PDP<'a> {
         let response = reqwest::Client::new()
             .post(target_url)
             .form(&form_data)
-            .header("Content-Type", "application/x-www-form-urlencoded")
             .header(AUTHORIZATION, format!("Basic {basic_auth}"))
             .send()
             .await
@@ -383,9 +385,9 @@ impl<'a> PDP<'a> {
     }
 
     pub async fn connect(&self) -> Result<LoginResponse, IshareError> {
-        let client_assertion = self.ishare.create_client_assertion(self.eori.clone())?;
+        let client_assertion = self.identity.create_client_assertion(self.eori.clone())?;
 
-        let client_id = self.ishare.get_client_eori();
+        let client_id = self.identity.eori().to_owned();
 
         let form_data = vec![
             ("grant_type", "client_credentials"),
@@ -403,7 +405,6 @@ impl<'a> PDP<'a> {
         let response = reqwest::Client::new()
             .post(target_url)
             .form(&form_data)
-            .header("Content-Type", "application/x-www-form-urlencoded")
             .send()
             .await
             .map_err(|e| IshareError {

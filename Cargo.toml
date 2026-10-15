@@ -1,6 +1,6 @@
 [package]
 name = "ishare"
-version = "0.11.1"
+version = "0.12.0"
 edition = "2021"
 description = "Helps you connect within the ishare framework"
 homepage = "https://github.com/LIFE-Electronic/ishare-connect"
@@ -32,3 +32,7 @@ http = "1.2.0"
 async-trait = "0.1.83"
 tracing = "0.1.41"
 url = "2.5.4"
+
+[dev-dependencies]
+tracing-test = { version = "0.2", features = ["no-env-filter"] }
+wiremock = "0.6"

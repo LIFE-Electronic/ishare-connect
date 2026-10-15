@@ -1,0 +1,39 @@
+{
+  "iss": "did:ishare:EU.NL.NTRNL-10000003",
+  "sub": "did:ishare:EU.NL.NTRNL-10000003",
+  "aud": "did:ishare:EU.NL.NTRNL-10000001",
+  "jti": "55a1cec9fdf24371bb27400ccf2f99fc",
+  "iat": 1789041726,
+  "exp": 1789041756,
+  "capabilities_info": {
+    "publicServices": [
+      {
+        "identifier": "get-capabilities-token",
+        "title": "Capabilities",
+        "description": "iSHARE Capabilities Endpoint",
+        "endpointDescription": "https://openapi.ishare.eu/index.html?version=3.0",
+        "endpointURL": "https://test-service-provider.ishare.eu/capabilities",
+        "tokenEndpoint": "https://test-service-provider.ishare.eu/token",
+        "status": "active",
+        "serviceType": "framework-defined",
+        "version": {
+          "compliesWithFrameworkVersions": [
+            "3.0"
+          ],
+          "compliesWithDataspaceVersions": [
+            "1.0"
+          ],
+          "capabilityVersion": "1.5"
+        },
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "authRegistry": {
+          "partyId": "did:ishare:EU.NL.NTRNL-10000004",
+          "url": "https://ar.isharetest.net"
+        }
+      }
+    ]
+  }
+}
