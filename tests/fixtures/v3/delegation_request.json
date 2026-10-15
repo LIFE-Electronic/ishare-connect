@@ -1,0 +1,48 @@
+{
+  "delegationRequest": {
+    "policyIssuer": "did:ishare:EU.NL.NTRNL-10000005",
+    "target": {
+      "accessSubject": "did:ishare:EU.NL.NTRNL-10000001"
+    },
+    "policySets": [
+      {
+        "policies": [
+          {
+            "target": {
+              "resource": {
+                "type": "GS1.CONTAINER",
+                "identifiers": [
+                  "180621.CONTAINER-Z"
+                ],
+                "attributes": [
+                  "GS1.CONTAINER.ATTRIBUTE.ETA",
+                  "GS1.CONTAINER.ATTRIBUTE.WEIGHT"
+                ]
+              },
+              "actions": [
+                "ISHARE.READ",
+                "ISHARE.CREATE",
+                "ISHARE.UPDATE",
+                "ISHARE.DELETE"
+              ],
+              "context": {
+                "serviceProvider": "did:ishare:EU.NL.NTRNL-10000003"
+              }
+            },
+            "rules": [
+              {
+                "effect": "Permit"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "delegationPath": [
+      "did:ishare:EU.NL.NTRNL-10000007"
+    ],
+    "previousSteps": [
+      "<delegation evidence token>"
+    ]
+  }
+}
