@@ -170,6 +170,18 @@ pub enum ValidateTokenError {
     Unexpected(#[from] anyhow::Error),
 }
 
+/// A token's certificate could not be verified against the configured trust anchor.
+#[derive(thiserror::Error, Debug)]
+#[non_exhaustive]
+pub enum VerifyTokenError {
+    #[error("token certificate is not signed by the configured trust anchor")]
+    UntrustedCertificate,
+    #[error(transparent)]
+    GetFirstX5CError(#[from] GetFirstX5CError),
+    #[error(transparent)]
+    Unexpected(#[from] anyhow::Error),
+}
+
 #[derive(thiserror::Error, Debug)]
 pub enum DecodeTokenError {
     #[error(transparent)]
